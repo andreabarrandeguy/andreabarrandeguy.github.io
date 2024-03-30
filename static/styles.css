@@ -1,0 +1,458 @@
+body {
+    background-color: #F7F7F7;
+}
+
+body.dark-mode {
+    background-color: black;
+}
+
+header {
+    height: 8dvh;
+}
+
+
+/* NAV */
+nav {
+    position: fixed;
+    top: 0;
+    width: 96dvw;
+    display: flex;
+    justify-content: end;
+    margin: 15px;
+    z-index: 3;
+}
+
+.navText {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    align-items: center;
+}
+.navText_mode {
+    background-image: url("../img/luna.png");
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: transparent;
+}
+
+.navText_link {
+    text-decoration: none;
+    color: black;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body.dark-mode .navText_link {
+    color: white;
+}
+
+.navText_link:hover {
+    color: black;
+}
+
+.navText_button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 12px;
+    width: 100px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body.dark-mode .navText_button {
+    background-color: white;
+    color: black;
+}
+
+.navText_button:hover {
+    opacity: 75%;
+    color: white;
+}
+
+
+/* PRESENTATION */
+.presentation {
+    height: 92dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+h1 {
+    color: black;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+}
+
+body.dark-mode h1 {
+    color: white;
+}
+
+h2 {
+    color: black;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+body.dark-mode h2 {
+    color: white;
+}
+
+.techGroupsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.techGroups {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tech {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 6px;
+    margin: 6px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 12px;
+    width: 120px;
+    opacity: 0;
+    transition: opacity 1s; 
+    animation: fadeIn 1s ease-in-out 2s forwards;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+body.dark-mode .tech {
+    background-color: white;
+    color: black;
+}
+
+.viewCV {
+    background-color: #F48C2B;
+    border: none;
+    color: white;
+    padding: 6px;
+    margin: 6px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 12px;
+    width: 150px;
+    height: 50px;
+    opacity: 0;
+    transition: opacity 1s; 
+    animation: fadeIn 1s ease-in-out 3s forwards; 
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+}
+
+.more {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 6px;
+    margin: 6px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 12px;
+    width: 100px;
+    height: 50px;
+    text-decoration: none;
+    padding-top: 13px;
+    opacity: 0;
+    transition: opacity 1s; 
+    animation: fadeIn 1s ease-in-out 2s forwards, shadows 3s infinite; 
+    position: relative;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+}
+
+@keyframes shadows {
+    0% { box-shadow: #F48C2B 0 0 20px; }
+    50% { box-shadow: #FA5F5F 0 0 20px; }
+    75% { box-shadow: #E64242 0 0 20px;}
+    100% { box-shadow: #F48C2B 0 0 20px; }
+   }
+
+.more:hover {
+    opacity: 75%;
+    color: white; 
+}
+
+body.dark-mode .more {
+    background-color: white;
+    color: black;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 1s, transform 1s;
+}
+
+.hidden2 {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s, transform 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* PORTFOLIO */
+.portfolio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    background-color: black;
+}
+
+.hidden3 {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show3 {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.proyecto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.proyecto:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: calc(1.375rem + 1.5vw);
+    color: white;
+}
+
+.proyecto_imagen {
+    height: 400px;
+    width: auto;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.proyecto_texto {
+    width: 50%;
+    font-family: "Nunito Sans", sans-serif;
+    text-align: justify;
+    color: white;
+}
+
+.proyecto_links {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.tec {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 6px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 12px;
+    width: 40px; 
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    align-content: center;
+    margin-bottom: 5px;
+}
+
+.proyecto_links_visit {
+    background-color: white;
+    border: none;
+    margin: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    width: 65px;
+    height: 50px;
+    transition: opacity 1s; 
+    animation: shadows 3s infinite; 
+    position: relative;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+}
+
+.proyecto_links_visit a {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* CONTACT */
+.contact {
+    height: 92dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact_photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    margin-top: 30px;
+}
+
+h4 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 2.5rem;
+}
+
+body.dark-mode h4 {
+    color: white;
+}
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+}
+
+.contact_form_field {
+    border-radius: 12px;
+    width: 100%;
+    margin: 5px;
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+    border: gray 1px solid;
+}
+
+.contact_form_button {
+    background-color: #F48C2B;
+    border: none;
+    color: white;
+    padding: 6px;
+    margin: 6px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 12px;
+    width: 150px;
+    height: 50px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+}
+
+.contact_form_button:hover {
+    opacity: 0.80;
+}
+
+footer {
+    display: flex;
+    height: 8dvh;
+    justify-content: center;
+}
+
+.contact_links_link {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 6px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 12px;
+    width: 40px; 
+    margin: 5px;
+    padding: 0;
+    height: 40px;
+    align-content: center;
+    margin-bottom: 5px;
+}
+
+.contact_links_link:hover {
+    color: white;
+}
+
+body.dark-mode .contact_links_link {
+    background-color: white;
+    color: black;
+}
+
+
+/* MEDIA SCREENS */
+@media screen and (max-width: 300px) {
+    .contact_form {
+        width: 90%;
+    }
+    .contact_photo {
+        width: 70%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navText {
+        width: 150px;
+    }
+    .navText_button {
+        display: none;
+    }
+    .proyecto {
+        margin-bottom: 45px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .portfolio {
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .proyecto {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .proyecto_imagen {
+        width: 70%;
+        height: auto;
+    }
+    .proyecto_texto {
+        width: 70%;
+    }
+    .proyecto_links {
+        width: 70%;
+    }
+}
