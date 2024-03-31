@@ -40,7 +40,7 @@ const observer2 = new IntersectionObserver((entries) => {
 
 // Open CV
 function openCV() {
-    var pdfUrl = '../img/AndreaBarrandeguyCV.pdf';
+    var pdfUrl = '../img/Andrea Barrandeguy_es.pdf';
     window.open(pdfUrl, '_blank');
 }
 
@@ -63,7 +63,7 @@ function sendEmail() {
       document.getElementById('name').value = '';
       document.getElementById('email').value = '';
       document.getElementById('message').value = '';
-      
+
     }, function(error) {
       console.log("Error al enviar el correo electrónico:", error);
       alert("Hubo un error al enviar el correo electrónico. Por favor, inténtalo de nuevo más tarde.");

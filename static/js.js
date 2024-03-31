@@ -40,7 +40,7 @@ const observer2 = new IntersectionObserver((entries) => {
 
 // Open CV
 function openCV() {
-    var pdfUrl = './img/AndreaBarrandeguyCV.pdf';
+    var pdfUrl = './img/Andrea Barrandeguy_en.pdf';
     window.open(pdfUrl, '_blank');
 }
 
