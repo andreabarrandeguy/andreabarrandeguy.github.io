@@ -279,19 +279,26 @@ h3 {
     justify-content: space-around;
 }
 
+.proyecto_links_tec {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 .tec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     border: none;
     color: black;
     padding: 6px;
-    text-align: center;
-    display: inline-block;
     border-radius: 12px;
     width: 40px; 
     margin: 0;
     padding: 0;
     height: 40px;
-    align-content: center;
     margin-bottom: 5px;
 }
 
