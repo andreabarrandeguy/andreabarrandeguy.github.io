@@ -58,6 +58,12 @@ function sendEmail() {
     .then(function(response) {
       console.log("Correo electrónico enviado con éxito:", response);
       alert("¡El correo electrónico ha sido enviado con éxito!");
+
+      // Vaciar los campos del formulario después de enviar el mensaje
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+      
     }, function(error) {
       console.log("Error al enviar el correo electrónico:", error);
       alert("Hubo un error al enviar el correo electrónico. Por favor, inténtalo de nuevo más tarde.");

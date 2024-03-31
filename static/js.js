@@ -58,12 +58,18 @@ function sendEmail() {
     .then(function(response) {
         console.log("Email sent successfully:", response);
         alert("The email has been sent successfully!");
-        }, function(error) {
+        
+        // Vaciar los campos del formulario después de enviar el mensaje
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+        
+    }, function(error) {
         console.log("Error sending email:", error);
         alert("There was an error sending the email. Please try again later.");
         
     });
-  }
+}
 
   
 // Dark mode
