@@ -392,18 +392,18 @@ footer {
 }
 
 .contact_links_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: black;
     border: none;
     color: white;
     padding: 6px;
-    text-align: center;
-    display: inline-block;
     border-radius: 12px;
     width: 40px; 
     margin: 5px;
     padding: 0;
     height: 40px;
-    align-content: center;
     margin-bottom: 5px;
 }
 
