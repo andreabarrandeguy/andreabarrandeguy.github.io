@@ -469,12 +469,6 @@ body.dark-mode .contact_links_link {
 }
 
 @media screen and (max-width: 500px) {
-  nav {
-    background-color: #fff8ed;
-    padding: 15px;
-    margin: 0;
-    width: 100dvw;
-  }
   .navText {
     width: 150px;
   }
