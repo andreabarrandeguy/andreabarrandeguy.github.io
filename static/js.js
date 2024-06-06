@@ -44,6 +44,64 @@ function openCV() {
     window.open(pdfUrl, '_blank');
 }
 
+// Dark mode
+let darkModeOff = true;
+
+function toggleDarkMode() {
+    darkModeOff = !darkModeOff;
+
+    if (darkModeOff) {
+        body.classList.add('dark-mode');
+        mode.style.backgroundImage = 'url("./img/foco.png")';
+        mode.title = "Light mode";
+    } else {
+        body.classList.remove('dark-mode');
+        mode.style.backgroundImage = 'url("./img/luna.png")';
+        mode.title = "Dark mode";
+    }
+}
+
+mode.addEventListener('click', toggleDarkMode);
+toggleDarkMode();
+
+// Change nav color
+document.addEventListener('scroll', function() {
+    if (darkModeOff) return;
+
+    const navbar = document.getElementById('navbar');
+    const links = navbar.querySelectorAll('a');
+    const countdownImage = document.getElementById('countdown-image');
+    const chromatikImage = document.getElementById('chromatik-image');
+    const countdownImageRect = countdownImage.getBoundingClientRect();
+    const chromatikImageRect = chromatikImage.getBoundingClientRect();
+    const navbarRect = navbar.getBoundingClientRect();
+    const modeButton = document.getElementById('mode');
+
+    // Calculate if any part of the navbar overlaps with the black image
+    const overlap = !(countdownImageRect.right < navbarRect.left || 
+                      countdownImageRect.left > navbarRect.right || 
+                      countdownImageRect.bottom < navbarRect.top || 
+                      countdownImageRect.top > navbarRect.bottom);
+
+    const overlap2 = !(chromatikImageRect.right < navbarRect.left || 
+                        chromatikImageRect.left > navbarRect.right || 
+                        chromatikImageRect.bottom < navbarRect.top || 
+                        chromatikImageRect.top > navbarRect.bottom);
+
+    if (overlap || overlap2) {
+        links.forEach(link => {
+            link.style.color = 'white';
+        });
+        modeButton.classList.add('foco');
+    } else {
+        links.forEach(link => {
+            link.style.color = 'black';
+        });
+        modeButton.classList.remove('foco');
+    }
+});
+
+
 // Send form to email
 function sendEmail() {
     var name = document.getElementById('name').value;
@@ -70,24 +128,3 @@ function sendEmail() {
         
     });
 }
-
-  
-// Dark mode
-let darkModeOn = true;
-
-function toggleDarkMode() {
-    darkModeOn = !darkModeOn;
-
-    if (darkModeOn) {
-        body.classList.add('dark-mode');
-        mode.style.backgroundImage = 'url("./img/foco.png")';
-        mode.title = "Light mode";
-    } else {
-        body.classList.remove('dark-mode');
-        mode.style.backgroundImage = 'url("./img/luna.png")';
-        mode.title = "Dark mode";
-    }
-}
-
-mode.addEventListener('click', toggleDarkMode);
-toggleDarkMode();
