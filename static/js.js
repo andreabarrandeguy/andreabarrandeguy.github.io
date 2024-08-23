@@ -28,15 +28,61 @@ hiddenElements.forEach((el) => observer.observe(el));
 // Portfolio
 const observer2 = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      console.log(entry)
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show3');
-      } 
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show3');
+        }
     });
-  });
-  
-  const hiddenProyects = document.querySelectorAll('.hidden3');
-  hiddenProyects.forEach((el) => observer2.observe(el));
+});
+
+const hiddenProyects = document.querySelectorAll('.hidden3');
+hiddenProyects.forEach((el) => observer2.observe(el));
+
+//Container Room
+document.addEventListener('DOMContentLoaded', () => {
+    const videoRoom = document.getElementById('room-video');
+    const containerRoom = document.getElementById('room');
+
+    containerRoom.addEventListener('mouseenter', () => {
+        videoRoom.currentTime = 0; // Reset video to the start
+        videoRoom.play(); // Start playing the video
+    });
+
+    containerRoom.addEventListener('mouseleave', () => {
+        videoRoom.pause(); // Pause the video
+        // No need to reset currentTime here; the video will replay from start on next hover
+    });
+});
+
+//Container Chromatik
+document.addEventListener('DOMContentLoaded', () => {
+    const videoChromatik = document.getElementById('chromatik-video');
+    const containerChromatik = document.getElementById('chromatik');
+
+    containerChromatik.addEventListener('mouseenter', () => {
+        videoChromatik.currentTime = 0;
+        videoChromatik.play();
+    });
+
+    containerChromatik.addEventListener('mouseleave', () => {
+        videoChromatik.pause();
+    });
+});
+
+//Container Countdown
+document.addEventListener('DOMContentLoaded', () => {
+    const videoCountdown = document.getElementById('countdown-video');
+    const containerCountdown = document.getElementById('countdown');
+
+    containerCountdown.addEventListener('mouseenter', () => {
+        videoCountdown.currentTime = 0;
+        videoCountdown.play();
+    });
+
+    containerCountdown.addEventListener('mouseleave', () => {
+        videoCountdown.pause();
+    });
+});
 
 // Open CV
 function openCV() {
@@ -65,30 +111,41 @@ mode.addEventListener('click', toggleDarkMode);
 toggleDarkMode();
 
 // Change nav color
-document.addEventListener('scroll', function() {
+document.addEventListener('scroll', function () {
     if (darkModeOff) return;
 
     const navbar = document.getElementById('navbar');
     const links = navbar.querySelectorAll('a');
-    const countdownImage = document.getElementById('countdown-image');
+    const roomImage = document.getElementById('room-image');
     const chromatikImage = document.getElementById('chromatik-image');
-    const countdownImageRect = countdownImage.getBoundingClientRect();
+    const countdownImage = document.getElementById('countdown-image');
+
+    const roomImageRect = roomImage.getBoundingClientRect();
     const chromatikImageRect = chromatikImage.getBoundingClientRect();
+    const countdownImageRect = countdownImage.getBoundingClientRect();
+
     const navbarRect = navbar.getBoundingClientRect();
     const modeButton = document.getElementById('mode');
 
     // Calculate if any part of the navbar overlaps with the black image
-    const overlap = !(countdownImageRect.right < navbarRect.left || 
-                      countdownImageRect.left > navbarRect.right || 
-                      countdownImageRect.bottom < navbarRect.top || 
-                      countdownImageRect.top > navbarRect.bottom);
+    const overlapRoom = !(roomImageRect.right < navbarRect.left ||
+        roomImageRect.left > navbarRect.right ||
+        roomImageRect.bottom < navbarRect.top ||
+        roomImageRect.top > navbarRect.bottom);
 
-    const overlap2 = !(chromatikImageRect.right < navbarRect.left || 
-                        chromatikImageRect.left > navbarRect.right || 
-                        chromatikImageRect.bottom < navbarRect.top || 
-                        chromatikImageRect.top > navbarRect.bottom);
+    const overlapChromatik = !(chromatikImageRect.right < navbarRect.left ||
+        chromatikImageRect.left > navbarRect.right ||
+        chromatikImageRect.bottom < navbarRect.top ||
+        chromatikImageRect.top > navbarRect.bottom);
 
-    if (overlap || overlap2) {
+    const overlapCountdown = !(countdownImageRect.right < navbarRect.left ||
+        countdownImageRect.left > navbarRect.right ||
+        countdownImageRect.bottom < navbarRect.top ||
+        countdownImageRect.top > navbarRect.bottom);
+
+
+
+    if (overlapRoom || overlapChromatik || overlapCountdown) {
         links.forEach(link => {
             link.style.color = 'white';
         });
@@ -107,24 +164,24 @@ function sendEmail() {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var message = document.getElementById('message').value;
-  
+
     emailjs.send("service_enoxr6l", "template_jtk852d", {
-      from_name: name,
-      from_email: email,
-      message: message
+        from_name: name,
+        from_email: email,
+        message: message
     })
-    .then(function(response) {
-        console.log("Email sent successfully:", response);
-        alert("The email has been sent successfully!");
-        
-        // Vaciar los campos del formulario después de enviar el mensaje
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('message').value = '';
-        
-    }, function(error) {
-        console.log("Error sending email:", error);
-        alert("There was an error sending the email. Please try again later.");
-        
-    });
+        .then(function (response) {
+            console.log("Email sent successfully:", response);
+            alert("The email has been sent successfully!");
+
+            // Vaciar los campos del formulario después de enviar el mensaje
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+
+        }, function (error) {
+            console.log("Error sending email:", error);
+            alert("There was an error sending the email. Please try again later.");
+
+        });
 }

@@ -1,9 +1,9 @@
 body {
-  background-color: #fff8ed;
+  background-color: #FAFAFA;
 }
 
 body.dark-mode {
-  background-color: #0f0f0f;
+  background-color: #0a0a0a;
 }
 
 header {
@@ -61,7 +61,7 @@ body.dark-mode .navText_link {
 }
 
 .navText_button {
-  background-color: #f48c2b;
+  background-color: #4A5FC1;
   border: none;
   color: white;
   padding: 6px;
@@ -73,9 +73,10 @@ body.dark-mode .navText_link {
   font-family: "Nunito Sans", sans-serif;
 }
 
-body.dark-mode .navText_button {
-  background-color: white;
-  color: black;
+body.dark-mode .navText_button,
+body.dark-mode .viewCV,
+body.dark-mode .contact_form_button {
+  background-color: #00BFA6;
 }
 
 .navText_button:hover {
@@ -85,7 +86,7 @@ body.dark-mode .navText_button {
 
 /* PRESENTATION */
 .presentation {
-  height: 92dvh;
+  min-height: 92dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,10 +109,6 @@ h2 {
   font-family: "Space Grotesk", sans-serif;
 }
 
-body.dark-mode h2 {
-  color: white;
-}
-
 .techGroupsContainer {
   display: flex;
   flex-direction: column;
@@ -125,9 +122,9 @@ body.dark-mode h2 {
 }
 
 .tech {
-  background-color: black;
-  border: none;
-  color: white;
+  background-color: #00BFA6;
+  border: 1px solid black;
+  color: black;
   padding: 6px;
   margin: 6px;
   text-align: center;
@@ -136,7 +133,7 @@ body.dark-mode h2 {
   width: 120px;
   opacity: 0;
   transition: opacity 1s;
-  animation: fadeIn 1s ease-in-out 2s forwards;
+  animation: fadeIn 0.5s ease-in-out 1s forwards;
   font-family: "Space Grotesk", sans-serif;
 }
 
@@ -149,13 +146,15 @@ body.dark-mode h2 {
   }
 }
 
-body.dark-mode .tech {
-  background-color: white;
-  color: black;
+body.dark-mode .tech,
+body.dark-mode .tec {
+  background-color: #4A5FC1;
+  color: white;
+  border: 1px solid white;
 }
 
 .viewCV {
-  background-color: #f48c2b;
+  background-color: #4A5FC1;
   border: none;
   color: white;
   padding: 6px;
@@ -167,9 +166,13 @@ body.dark-mode .tech {
   height: 50px;
   opacity: 0;
   transition: opacity 1s;
-  animation: fadeIn 1s ease-in-out 3s forwards;
+  animation: fadeIn 1s ease-in-out 1.5s forwards;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
+}
+
+.viewCV:hover {
+  opacity: 75% !important;
 }
 
 .more {
@@ -187,7 +190,7 @@ body.dark-mode .tech {
   padding-top: 13px;
   opacity: 0;
   transition: opacity 1s;
-  animation: fadeIn 1s ease-in-out 2s forwards, shadows 3s infinite;
+  animation: fadeIn 0.5s ease-in-out 1s forwards, shadows 3s infinite;
   position: relative;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
@@ -195,16 +198,16 @@ body.dark-mode .tech {
 
 @keyframes shadows {
   0% {
-    box-shadow: #f48c2b 0 0 20px;
+    box-shadow: #6A7FDB 0 0 20px;
   }
   50% {
-    box-shadow: #fa5f5f 0 0 20px;
+    box-shadow: grey 0 0 20px;
   }
   75% {
-    box-shadow: #e64242 0 0 20px;
+    box-shadow: black 0 0 20px;
   }
   100% {
-    box-shadow: #f48c2b 0 0 20px;
+    box-shadow: #00BFA6 0 0 20px;
   }
 }
 
@@ -221,13 +224,20 @@ body.dark-mode .more {
 .hidden {
   opacity: 0;
   transform: translateY(-100%);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 0.5s, transform 0.5s;
 }
 
 .hidden2 {
   opacity: 0;
   transform: translateY(100%);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 0.5s, transform 0.5s;
+  color: #4A5FC1;
+}
+
+body.dark-mode .hidden2,
+body.dark-mode h3,
+body.dark-mode h4 {
+  color: #00BFA6;
 }
 
 .show {
@@ -240,12 +250,12 @@ body.dark-mode .more {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100dvh;
-  background-color: #fcddac;
+  min-height: 100dvh;
+  background-color: #EEEEEE;
 }
 
 body.dark-mode .portfolio {
-  background-color: black;
+  background-color: #050505;
 }
 
 .hidden3 {
@@ -265,6 +275,12 @@ body.dark-mode .portfolio {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px 0;
+  width: fit-content;
+}
+
+.proyecto:nth-child(1) {
+  transition-delay: 400ms;
 }
 
 .proyecto:nth-child(2) {
@@ -274,26 +290,46 @@ body.dark-mode .portfolio {
 h3 {
   font-family: "Space Grotesk", sans-serif;
   font-size: calc(1.375rem + 1.5vw);
-  color: black;
+  color: #4A5FC1;
 }
 
-body.dark-mode h3 {
-  color: white;
+.mediaContainer {
+  position: relative;
+  display: inline-block; 
+  width: 420px; 
+  height: 280px; 
+  overflow: hidden; 
+  box-sizing: border-box;
+  margin-bottom: 15px;
 }
 
-.proyecto_imagen {
-  height: 400px;
-  width: auto;
-  object-fit: cover;
+.proyecto_imagen, .media-video {
   margin-bottom: 20px;
   border-radius: 12px;
-  border: 2px white solid;
+  border: 3px black solid;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  box-sizing: border-box; 
+}
+
+body.dark-mode .proyecto_imagen,
+body.dark-mode .contact_photo {
+  border: 3px white solid;
+}
+
+.mediaContainer:hover .proyecto_imagen {
+  display: none; /* Hide image when hovering */
+}
+
+.mediaContainer:hover .media-video {
+  display: block; /* Show video on hover */
 }
 
 .proyecto_texto {
-  width: 50%;
+  width: 70%;
   font-family: "Nunito Sans", sans-serif;
-  text-align: justify;
+  text-align: center;
   color: black;
 }
 
@@ -304,36 +340,29 @@ body.dark-mode .proyecto_texto {
 .proyecto_links {
   display: flex;
   align-items: center;
-  width: 50%;
+  width: 70%;
   justify-content: space-around;
 }
 
 .proyecto_links_tec {
   display: flex;
   width: 70%;
-  justify-content: space-around;
+  justify-content: flex-end;
   flex-wrap: wrap;
 }
 
 .tec {
+  background-color: #00BFA6;
+  border: 1px solid black;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
-  border: none;
-  color: white;
-  padding: 6px;
   border-radius: 12px;
   width: 40px;
-  margin: 0;
-  padding: 0;
+  margin: 0 2px;
   height: 40px;
-  margin-bottom: 5px;
-}
-
-body.dark-mode .tec {
-  background-color: white;
-  color: black;
+  font-size: larger;
 }
 
 .proyecto_links_visit {
@@ -345,7 +374,7 @@ body.dark-mode .tec {
   align-items: center;
   border-radius: 12px;
   width: 65px;
-  height: 50px;
+  height: 40px;
   transition: opacity 1s;
   animation: shadows 3s infinite;
   position: relative;
@@ -368,7 +397,7 @@ body.dark-mode .proyecto_links_visit a {
 
 /* CONTACT */
 .contact {
-  height: 92dvh;
+  min-height: 92dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -380,15 +409,13 @@ body.dark-mode .proyecto_links_visit a {
   height: 200px;
   border-radius: 150px;
   margin-top: 30px;
+  border: 3px solid black;
 }
 
 h4 {
   font-family: "Space Grotesk", sans-serif;
   font-size: 2.5rem;
-}
-
-body.dark-mode h4 {
-  color: white;
+  color: #4A5FC1;
 }
 
 .contact_form {
@@ -404,11 +431,25 @@ body.dark-mode h4 {
   margin: 5px;
   font-family: "Nunito Sans", sans-serif;
   text-align: center;
-  border: gray 1px solid;
+  border: #00BFA6 1px solid;
+}
+
+body.dark-mode .contact_form_field {
+  border: #6A7FDB 2px solid;
+}
+
+.contact_form_field:focus {
+  outline: none;
+  border: #00BFA6 3px solid;
+}
+
+body.dark-mode .contact_form_field:focus {
+  outline: none;
+  border: #6A7FDB 4px solid;
 }
 
 .contact_form_button {
-  background-color: #f48c2b;
+  background-color: #4A5FC1 ;
   border: none;
   color: white;
   padding: 6px;
@@ -430,6 +471,7 @@ footer {
   display: flex;
   height: 8dvh;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .contact_links_link {
@@ -458,13 +500,34 @@ body.dark-mode .contact_links_link {
 }
 
 /* MEDIA SCREENS */
-@media screen and (max-width: 300px) {
-  .contact_form {
+@media screen and (max-width: 1300px) {
+  .portfolio {
+    flex-direction: column;
+    height: auto;
+  }
+  .proyecto {
+    width: 60%;
+  }
+  .proyecto_links {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .proyecto {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .proyecto {
     width: 90%;
   }
-  .contact_photo {
-    width: 70%;
-    height: auto;
+  .proyecto_links {
+    width: 60%;
+  }
+  .tec {
+    margin: 2px;
   }
 }
 
@@ -480,26 +543,21 @@ body.dark-mode .contact_links_link {
   }
 }
 
-@media screen and (max-width: 800px) {
-  .portfolio {
-    flex-wrap: wrap;
-    height: auto;
+@media screen and (max-width: 420px) {
+  .mediaContainer {
+    width: 320px;
+    height: 180px;
   }
-  .proyecto {
-    margin-top: 20px;
-    margin-bottom: 20px;
+  .proyecto_links_tec {
+    width: 60%;
+  }
+  .contact_form {
+    width: 90%;
+  }
+  .contact_photo {
+    width: 70%;
+    height: auto;
   }
 }
 
-@media screen and (max-width: 1080px) {
-  .proyecto_imagen {
-    width: 70%;
-    height: auto;
-  }
-  .proyecto_texto {
-    width: 70%;
-  }
-  .proyecto_links {
-    width: 70%;
-  }
-}
+
