@@ -16,7 +16,7 @@ body.dark-mode {
 }
 
 header {
-  height: 8dvh;
+  height: 10dvh;
 }
 
 /* NAV */
@@ -99,7 +99,7 @@ body.dark-mode .contact_form_button {
 
 /* PRESENTATION */
 .presentation {
-  min-height: 92dvh;
+  min-height: 90dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -398,6 +398,8 @@ body.dark-mode .proyecto_texto {
 .proyecto_links_visit {
   background-color: black;
   border: none;
+  text-decoration: none;
+  color: white;
   margin: 6px;
   display: flex;
   justify-content: center;
@@ -413,20 +415,14 @@ body.dark-mode .proyecto_texto {
   transition: background-color 0.3s ease;
 }
 
+.proyecto_links_visit:hover {
+  color: white;
+}
+
 body.dark-mode .proyecto_links_visit {
   background-color: white;
   transition: background-color 0.3s ease;
-}
-
-.proyecto_links_visit a {
-  color: white;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-body.dark-mode .proyecto_links_visit a {
   color: black;
-  transition: background-color 0.3s ease;
 }
 
 /* CONTACT */
