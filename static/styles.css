@@ -1,9 +1,18 @@
+:root {
+  --primary-bg: #FAFAFA;
+  --primary-bg-dark: #0a0a0a;
+  --primary-color: #4A5FC1;
+  --accent-color: #00BFA6;
+}
+
 body {
-  background-color: #FAFAFA;
+  background-color: var(--primary-bg);
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode {
-  background-color: #0a0a0a;
+  background-color: var(--primary-bg-dark);
+  transition: background-color 0.3s ease;
 }
 
 header {
@@ -50,10 +59,12 @@ nav {
   text-decoration: none;
   color: black;
   font-family: "Nunito Sans", sans-serif;
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .navText_link {
   color: white !important;
+  transition: background-color 0.3s ease;
 }
 
 .navText_link:hover {
@@ -61,7 +72,7 @@ body.dark-mode .navText_link {
 }
 
 .navText_button {
-  background-color: #4A5FC1;
+  background-color: var(--primary-color);
   border: none;
   color: white;
   padding: 6px;
@@ -71,12 +82,14 @@ body.dark-mode .navText_link {
   border-radius: 12px;
   width: 100px;
   font-family: "Nunito Sans", sans-serif;
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .navText_button,
 body.dark-mode .viewCV,
 body.dark-mode .contact_form_button {
-  background-color: #00BFA6;
+  background-color: var(--accent-color);
+  transition: background-color 0.3s ease;
 }
 
 .navText_button:hover {
@@ -98,10 +111,12 @@ h1 {
   color: black;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode h1 {
   color: white;
+  transition: background-color 0.3s ease;
 }
 
 h2 {
@@ -122,7 +137,7 @@ h2 {
 }
 
 .tech {
-  background-color: #00BFA6;
+  background-color: var(--accent-color);
   border: 1px solid black;
   color: black;
   padding: 6px;
@@ -135,6 +150,7 @@ h2 {
   transition: opacity 1s;
   animation: fadeIn 0.5s ease-in-out 1s forwards;
   font-family: "Space Grotesk", sans-serif;
+  transition: background-color 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -148,13 +164,14 @@ h2 {
 
 body.dark-mode .tech,
 body.dark-mode .tec {
-  background-color: #4A5FC1;
+  background-color: var(--primary-color);
   color: white;
   border: 1px solid white;
+  transition: background-color 0.3s ease;
 }
 
 .viewCV {
-  background-color: #4A5FC1;
+  background-color: var(--primary-color);
   border: none;
   color: white;
   padding: 6px;
@@ -169,6 +186,7 @@ body.dark-mode .tec {
   animation: fadeIn 1s ease-in-out 1.5s forwards;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
+  transition: background-color 0.3s ease;
 }
 
 .viewCV:hover {
@@ -194,11 +212,12 @@ body.dark-mode .tec {
   position: relative;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
+  transition: background-color 0.3s ease;
 }
 
 @keyframes shadows {
   0% {
-    box-shadow: #6A7FDB 0 0 20px;
+    box-shadow: var(--primary-color) 0 0 20px;
   }
   50% {
     box-shadow: grey 0 0 20px;
@@ -207,7 +226,7 @@ body.dark-mode .tec {
     box-shadow: black 0 0 20px;
   }
   100% {
-    box-shadow: #00BFA6 0 0 20px;
+    box-shadow: var(--accent-color) 0 0 20px;
   }
 }
 
@@ -219,6 +238,7 @@ body.dark-mode .tec {
 body.dark-mode .more {
   background-color: white;
   color: black;
+  transition: background-color 0.3s ease;
 }
 
 .hidden {
@@ -231,13 +251,15 @@ body.dark-mode .more {
   opacity: 0;
   transform: translateY(100%);
   transition: opacity 0.5s, transform 0.5s;
-  color: #4A5FC1;
+  color: var(--primary-color);
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .hidden2,
 body.dark-mode h3,
 body.dark-mode h4 {
-  color: #00BFA6;
+  color: var(--accent-color);
+  transition: background-color 0.3s ease;
 }
 
 .show {
@@ -252,10 +274,12 @@ body.dark-mode h4 {
   justify-content: center;
   min-height: 100dvh;
   background-color: #EEEEEE;
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .portfolio {
   background-color: #050505;
+  transition: background-color 0.3s ease;
 }
 
 .hidden3 {
@@ -290,7 +314,8 @@ body.dark-mode .portfolio {
 h3 {
   font-family: "Space Grotesk", sans-serif;
   font-size: calc(1.375rem + 1.5vw);
-  color: #4A5FC1;
+  color: var(--primary-color);
+  transition: background-color 0.3s ease;
 }
 
 .mediaContainer {
@@ -311,11 +336,13 @@ h3 {
   height: 100%;
   object-fit: cover; 
   box-sizing: border-box; 
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .proyecto_imagen,
 body.dark-mode .contact_photo {
   border: 3px white solid;
+  transition: background-color 0.3s ease;
 }
 
 .mediaContainer:hover .proyecto_imagen {
@@ -331,10 +358,12 @@ body.dark-mode .contact_photo {
   font-family: "Nunito Sans", sans-serif;
   text-align: center;
   color: black;
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .proyecto_texto {
   color: white;
+  transition: background-color 0.3s ease;
 }
 
 .proyecto_links {
@@ -352,7 +381,7 @@ body.dark-mode .proyecto_texto {
 }
 
 .tec {
-  background-color: #00BFA6;
+  background-color: var(--accent-color);
   border: 1px solid black;
   color: black;
   display: flex;
@@ -363,6 +392,7 @@ body.dark-mode .proyecto_texto {
   margin: 0 2px;
   height: 40px;
   font-size: larger;
+  transition: background-color 0.3s ease;
 }
 
 .proyecto_links_visit {
@@ -380,19 +410,23 @@ body.dark-mode .proyecto_texto {
   position: relative;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .proyecto_links_visit {
   background-color: white;
+  transition: background-color 0.3s ease;
 }
 
 .proyecto_links_visit a {
   color: white;
   text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .proyecto_links_visit a {
   color: black;
+  transition: background-color 0.3s ease;
 }
 
 /* CONTACT */
@@ -410,12 +444,14 @@ body.dark-mode .proyecto_links_visit a {
   border-radius: 150px;
   margin-top: 30px;
   border: 3px solid black;
+  transition: background-color 0.3s ease;
 }
 
 h4 {
   font-family: "Space Grotesk", sans-serif;
   font-size: 2.5rem;
-  color: #4A5FC1;
+  color: var(--primary-color);
+  transition: background-color 0.3s ease;
 }
 
 .contact_form {
@@ -431,25 +467,29 @@ h4 {
   margin: 5px;
   font-family: "Nunito Sans", sans-serif;
   text-align: center;
-  border: #00BFA6 1px solid;
+  border: var(--accent-color) 1px solid;
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .contact_form_field {
   border: #6A7FDB 2px solid;
+  transition: background-color 0.3s ease;
 }
 
 .contact_form_field:focus {
   outline: none;
-  border: #00BFA6 3px solid;
+  border: var(--accent-color) 3px solid;
+  transition: background-color 0.3s ease;
 }
 
 body.dark-mode .contact_form_field:focus {
   outline: none;
   border: #6A7FDB 4px solid;
+  transition: background-color 0.3s ease;
 }
 
 .contact_form_button {
-  background-color: #4A5FC1 ;
+  background-color: var(--primary-color);
   border: none;
   color: white;
   padding: 6px;
@@ -461,6 +501,7 @@ body.dark-mode .contact_form_field:focus {
   height: 50px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
+  transition: background-color 0.3s ease;
 }
 
 .contact_form_button:hover {
@@ -488,6 +529,7 @@ footer {
   padding: 0;
   height: 40px;
   margin-bottom: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .contact_links_link:hover {
@@ -497,6 +539,7 @@ footer {
 body.dark-mode .contact_links_link {
   background-color: white;
   color: black;
+  transition: background-color 0.3s ease;
 }
 
 /* MEDIA SCREENS */
