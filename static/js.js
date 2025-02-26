@@ -38,6 +38,21 @@ const observer2 = new IntersectionObserver((entries) => {
 const hiddenProyects = document.querySelectorAll('.hidden3');
 hiddenProyects.forEach((el) => observer2.observe(el));
 
+//Container Pixly
+document.addEventListener('DOMContentLoaded', () => {
+    const videoPixly = document.getElementById('pixly-video');
+    const containerPixly = document.getElementById('pixly');
+
+    containerPixly.addEventListener('mouseenter', () => {
+        videoPixly.currentTime = 0;
+        videoPixly.play();
+    });
+
+    containerPixly.addEventListener('mouseleave', () => {
+        videoPixly.pause();
+    });
+});
+
 //Container Room
 document.addEventListener('DOMContentLoaded', () => {
     const videoRoom = document.getElementById('room-video');
@@ -66,21 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     containerChromatik.addEventListener('mouseleave', () => {
         videoChromatik.pause();
-    });
-});
-
-//Container Countdown
-document.addEventListener('DOMContentLoaded', () => {
-    const videoCountdown = document.getElementById('countdown-video');
-    const containerCountdown = document.getElementById('countdown');
-
-    containerCountdown.addEventListener('mouseenter', () => {
-        videoCountdown.currentTime = 0;
-        videoCountdown.play();
-    });
-
-    containerCountdown.addEventListener('mouseleave', () => {
-        videoCountdown.pause();
     });
 });
 
@@ -118,11 +118,11 @@ document.addEventListener('scroll', function () {
     const links = navbar.querySelectorAll('a');
     const roomImage = document.getElementById('room-image');
     const chromatikImage = document.getElementById('chromatik-image');
-    const countdownImage = document.getElementById('countdown-image');
+    const pixlyImage = document.getElementById('pixly-image');
 
     const roomImageRect = roomImage.getBoundingClientRect();
     const chromatikImageRect = chromatikImage.getBoundingClientRect();
-    const countdownImageRect = countdownImage.getBoundingClientRect();
+    const pixlyImageRect = pixlyImage.getBoundingClientRect();
 
     const navbarRect = navbar.getBoundingClientRect();
     const modeButton = document.getElementById('mode');
@@ -138,14 +138,14 @@ document.addEventListener('scroll', function () {
         chromatikImageRect.bottom < navbarRect.top ||
         chromatikImageRect.top > navbarRect.bottom);
 
-    const overlapCountdown = !(countdownImageRect.right < navbarRect.left ||
-        countdownImageRect.left > navbarRect.right ||
-        countdownImageRect.bottom < navbarRect.top ||
-        countdownImageRect.top > navbarRect.bottom);
+    const overlapPixly = !(pixlyImageRect.right < navbarRect.left ||
+        pixlyImageRect.left > navbarRect.right ||
+        pixlyImageRect.bottom < navbarRect.top ||
+        pixlyImageRect.top > navbarRect.bottom);
 
 
 
-    if (overlapRoom || overlapChromatik || overlapCountdown) {
+    if (overlapRoom || overlapChromatik || overlapPixly) {
         links.forEach(link => {
             link.style.color = 'white';
         });
