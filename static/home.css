@@ -378,9 +378,9 @@ body.dark-mode #modeToggle .icon-moon { display: block; }
   margin-top: 14px;
 }
 
-/* below 900px the phone-flight animation is disabled (see home.js) —
+/* below 1300px the phone-flight animation is disabled (see home.js) —
    show the static screenshot inside the slot instead */
-@media (max-width: 900px) {
+@media (max-width: 1300px) {
   .work-card__slot-img { opacity: 1; }
 }
 
@@ -580,8 +580,12 @@ footer {
   .about-ctas { justify-content: center; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1300px) {
   .phone-overlay { display: none !important; }
+}
+
+@media (max-width: 900px) {
+  .hero__glow { display: none; }
 }
 
 @media (max-width: 800px) {
@@ -592,7 +596,11 @@ footer {
 @media (max-width: 640px) {
   nav { grid-template-columns: 1fr auto; }
   .nav-identity__name { font-size: 18px; }
-  .hero__inner, .work, .trajectory, .about__grid, footer { padding-left: 0; padding-right: 0; }
+  .hero__inner, .about__grid, footer { padding-left: 0; padding-right: 0; }
+
+  #modeToggle { width: 44px; height: 44px; }
+  .pron-btn { width: 34px; height: 34px; }
+  .copy-email-btn { width: 44px; height: 44px; }
 }
 
 @media (max-width: 500px) {

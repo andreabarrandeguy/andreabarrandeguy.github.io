@@ -86,7 +86,7 @@
     this.metrics = { heroRect: null, slots: [null, null, null] };
     this.scrollRAF = null;
     this.resizeTimer = null;
-    this.mq = window.matchMedia('(min-width: 901px)');
+    this.mq = window.matchMedia('(min-width: 1301px)');
     this.enabled = this.mq.matches;
 
     var self = this;
