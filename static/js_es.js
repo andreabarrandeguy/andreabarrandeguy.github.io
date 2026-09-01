@@ -38,18 +38,33 @@ const observer2 = new IntersectionObserver((entries) => {
 const hiddenProyects = document.querySelectorAll('.hidden3');
 hiddenProyects.forEach((el) => observer2.observe(el));
 
-//Container Room
+//Container Pixly
 document.addEventListener('DOMContentLoaded', () => {
-  const videoRoom = document.getElementById('room-video');
-  const containerRoom = document.getElementById('room');
+  const videoPixly = document.getElementById('pixly-video');
+  const containerPixly = document.getElementById('pixly');
 
-  containerRoom.addEventListener('mouseenter', () => {
-    videoRoom.currentTime = 0; // Reset video to the start
-    videoRoom.play(); // Start playing the video
+  containerPixly.addEventListener('mouseenter', () => {
+    videoPixly.currentTime = 0;
+    videoPixly.play();
   });
 
-  containerRoom.addEventListener('mouseleave', () => {
-    videoRoom.pause(); // Pause the video
+  containerPixly.addEventListener('mouseleave', () => {
+    videoPixly.pause();
+  });
+});
+
+//Container EestiRoll
+document.addEventListener('DOMContentLoaded', () => {
+  const videoEestiRoll = document.getElementById('eestiroll-video');
+  const containerEestiRoll = document.getElementById('eestiroll');
+
+  containerEestiRoll.addEventListener('mouseenter', () => {
+    videoEestiRoll.currentTime = 0; // Reset video to the start
+    videoEestiRoll.play(); // Start playing the video
+  });
+
+  containerEestiRoll.addEventListener('mouseleave', () => {
+    videoEestiRoll.pause(); // Pause the video
     // No need to reset currentTime here; the video will replay from start on next hover
   });
 });
@@ -66,21 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   containerChromatik.addEventListener('mouseleave', () => {
     videoChromatik.pause();
-  });
-});
-
-//Container Pixly
-document.addEventListener('DOMContentLoaded', () => {
-  const videoPixly = document.getElementById('pixly-video');
-  const containerPixly = document.getElementById('pixly');
-
-  containerPixly.addEventListener('mouseenter', () => {
-    videoPixly.currentTime = 0;
-    videoPixly.play();
-  });
-
-  containerPixly.addEventListener('mouseleave', () => {
-    videoPixly.pause();
   });
 });
 
@@ -117,11 +117,11 @@ document.addEventListener('scroll', function () {
 
   const navbar = document.getElementById('navbar');
   const links = navbar.querySelectorAll('a');
-  const roomImage = document.getElementById('room-image');
+  const eestiRollImage = document.getElementById('eestiroll-image');
   const chromatikImage = document.getElementById('chromatik-image');
   const pixlyImage = document.getElementById('pixly-image');
 
-  const roomImageRect = roomImage.getBoundingClientRect();
+  const eestiRollImageRect = eestiRollImage.getBoundingClientRect();
   const chromatikImageRect = chromatikImage.getBoundingClientRect();
   const pixlyImageRect = pixlyImage.getBoundingClientRect();
 
@@ -129,10 +129,10 @@ document.addEventListener('scroll', function () {
   const modeButton = document.getElementById('mode');
 
   // Calculate if any part of the navbar overlaps with the black image
-  const overlapRoom = !(roomImageRect.right < navbarRect.left ||
-    roomImageRect.left > navbarRect.right ||
-    roomImageRect.bottom < navbarRect.top ||
-    roomImageRect.top > navbarRect.bottom);
+  const overlapEestiRoll = !(eestiRollImageRect.right < navbarRect.left ||
+    eestiRollImageRect.left > navbarRect.right ||
+    eestiRollImageRect.bottom < navbarRect.top ||
+    eestiRollImageRect.top > navbarRect.bottom);
 
   const overlapChromatik = !(chromatikImageRect.right < navbarRect.left ||
     chromatikImageRect.left > navbarRect.right ||
@@ -146,7 +146,7 @@ document.addEventListener('scroll', function () {
 
 
 
-  if (overlapRoom || overlapChromatik || overlapPixly) {
+  if (overlapEestiRoll || overlapChromatik || overlapPixly) {
     links.forEach(link => {
       link.style.color = 'white';
     });
