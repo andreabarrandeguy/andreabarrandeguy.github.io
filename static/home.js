@@ -10,6 +10,17 @@
   });
 })();
 
+// ---------- play name pronunciation ----------
+(function () {
+  var pronBtn = document.getElementById('pronBtn');
+  if (!pronBtn) return;
+  var audio = new Audio('./img/barrandeguy.mp3');
+  pronBtn.addEventListener('click', function () {
+    audio.currentTime = 0;
+    audio.play().catch(function () {});
+  });
+})();
+
 // ---------- nav identity reveal on scroll ----------
 (function () {
   var heroName = document.getElementById('heroName');

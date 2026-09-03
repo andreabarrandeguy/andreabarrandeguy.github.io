@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andreabarrandeguy.github.io/sitemap.xml
